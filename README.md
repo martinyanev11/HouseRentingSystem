@@ -10,13 +10,13 @@ The House Renting System is a ASP.NET MVC application for house renting. It is d
 - [x] **Initial Project Setup**
   - [x] Clean unnecessary parts from the default project template.
   - [x] Separate project into class libraries.
-  - [ ] Change the `favicon.ico` file.
+  - [x] Change the `favicon.ico` file.
         
-- [ ] **Creating Simple Project Features**
-  - [ ] Create `HouseDetailsViewModel.cs`.
-  - [ ] Create temporary hard-coded list of houses for fuctionality visualization.
-  - [ ] Crete `HouseController.cs` in `/Controllers` folder.
-  - [ ] Create `AllHousesViewModel.cs` that will hold the data for the houses.
-  - [ ] Create view that will display the information.
-  - [ ] Create details page and `HouseDetailsViewModel.cs` file.
-  - [ ] Add links in the navigation bar of the application.
+- [x] **Creating Simple Project Features**
+  - [x] Create `HouseDetailsViewModel.cs`.
+  - [x] Create temporary hard-coded list of houses for fuctionality visualization.
+  - [x] Crete `HouseController.cs` in `/Controllers` folder.
+  - [x] Create `AllHousesViewModel.cs` that will hold the data for the houses.
+  - [x] Create view that will display the information.
+  - [x] Create details page and `HouseDetailsViewModel.cs` file.
+  - [x] Add links in the navigation bar of the application.
