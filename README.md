@@ -20,3 +20,11 @@ The House Renting System is a ASP.NET MVC application for house renting. It is d
   - [x] Create view that will display the information.
   - [x] Create details page and `HouseDetailsViewModel.cs` file.
   - [x] Add links in the navigation bar of the application.
+
+- [ ] **Database Layer**
+  - [ ] Create Entity Model Classes.
+  - [ ] Modify DbContext Class.
+  - [ ] Seed Database.
+  - [ ] Create and Apply a Migration.
+  - [ ] Register and Log in the App.
+  - [ ] Implement App Pages ("Home", "All Houses", "My Houses", "Details").
