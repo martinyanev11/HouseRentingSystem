@@ -2,6 +2,8 @@
 {
     public static class EntityConstants
     {
+        public const string DefaultPassword = "123456";
+
         public static class HouseConstants
         {
             public const int TitleMaxLength = 50;

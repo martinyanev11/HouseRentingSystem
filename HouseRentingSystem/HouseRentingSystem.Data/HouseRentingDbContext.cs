@@ -4,6 +4,7 @@
     using Microsoft.EntityFrameworkCore;
 
     using Models;
+    using Models.Configurations;
 
     public class HouseRentingDbContext : IdentityDbContext
     {
@@ -18,18 +19,10 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<House>(entity =>
-            {
-                entity.HasOne(h => h.Category)
-                    .WithMany(c => c.Houses)
-                    .HasForeignKey(h => h.CategoryId)
-                    .OnDelete(DeleteBehavior.Restrict);
-
-                entity.HasOne(h => h.Agent)
-                    .WithMany(a => a.ManagedHouses)
-                    .HasForeignKey(h => h.AgentId)
-                    .OnDelete(DeleteBehavior.Restrict);
-            });
+            builder.ApplyConfiguration(new IdentityUserConfiguration());
+            builder.ApplyConfiguration(new AgentConfiguration());
+            builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new HouseConfiguration());
 
             base.OnModelCreating(builder);
         }
