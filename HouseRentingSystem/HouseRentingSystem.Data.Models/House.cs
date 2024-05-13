@@ -29,7 +29,7 @@
 
         [Required]
         [Range(PricePerMonthMinValue, PricePerMonthMaxValue)]
-        [Column(TypeName = "money(12,3)")]
+        [Column(TypeName = "decimal(12,3)")]
         public decimal PricePerMonth { get; set; }
 
         [Required]
