@@ -12,8 +12,9 @@ namespace HouseRentingSystem.Web
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
             // Database connection settings
-            string connectionString =
-                builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            string connectionString = builder.Configuration
+                .GetConnectionString("DefaultConnection") ?? 
+                throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             builder.Services.AddDbContext<HouseRentingDbContext>(options =>
                 options.UseSqlServer(connectionString));
