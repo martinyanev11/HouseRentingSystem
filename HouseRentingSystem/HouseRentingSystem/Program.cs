@@ -15,7 +15,7 @@ namespace HouseRentingSystem.Web
             string connectionString =
                 builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            builder.Services.AddDbContext<HouseRentingDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -29,7 +29,7 @@ namespace HouseRentingSystem.Web
                     options.Password.RequireUppercase = false;
                     options.Password.RequireNonAlphanumeric = false;
                 })
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<HouseRentingDbContext>();
 
             builder.Services.AddControllersWithViews();
 
