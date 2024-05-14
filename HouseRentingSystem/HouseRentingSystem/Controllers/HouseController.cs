@@ -1,12 +1,13 @@
 ﻿namespace HouseRentingSystem.Web.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Authorization;
+
+    using System.Security.Claims;
 
     using Data;
-    using Common;
+    using Data.Models;
     using Web.ViewModels.House;
-    using Microsoft.AspNetCore.Authorization;
-    using System.Security.Claims;
 
     public class HouseController : Controller
     {
@@ -55,10 +56,22 @@
             return View(allHouses);
         }
 
-        public IActionResult Details() 
+        public IActionResult Details(int id) 
         { 
-            HouseDetailsViewModel? houseDetails = 
-                RawData.GetHouses().FirstOrDefault();
+            House? house = _dbContext.Houses
+                .FirstOrDefault(h => h.Id == id);
+
+            if (house is null)
+            {
+                return BadRequest();
+            }
+
+            HouseDetailsViewModel houseDetails = new HouseDetailsViewModel()
+            {
+                Title = house.Title,
+                ImageUrl = house.ImageUrl,
+                Address = house.Address,
+            };
 
             return View(houseDetails);
         }
